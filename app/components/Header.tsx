@@ -1,35 +1,74 @@
+"use client";
+
+import Link from "next/link";
+
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800 bg-black/80 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
-        <h1 className="text-3xl font-bold tracking-wider text-white">
-          ZK TATTOO
-        </h1>
+    <header
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 100,
+        width: "100%",
+        background: "#050505",
+        borderBottom: "1px solid #222222",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "1440px",
+          minHeight: "84px",
+          margin: "0 auto",
+          padding: "0 44px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "24px",
+        }}
+      >
+        <Link
+          href="/"
+          style={{
+            color: "#ffffff",
+            textDecoration: "none",
+            fontSize: "28px",
+            fontWeight: 700,
+          }}
+        >
+          ZKINK
+        </Link>
 
-        <nav>
-          <ul className="flex gap-10 text-lg text-zinc-300">
-            <li className="cursor-pointer transition hover:text-white">
-              Home
-            </li>
+        <nav
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "34px",
+          }}
+        >
+          <Link href="/portfolio" style={linkStyle}>
+            Portfolio
+          </Link>
 
-            <li className="cursor-pointer transition hover:text-white">
-              Try-On
-            </li>
+          <Link href="/try-on" style={linkStyle}>
+            Tattoo Try-On
+          </Link>
 
-            <li className="cursor-pointer transition hover:text-white">
-              Portfolio
-            </li>
+          <Link href="/booking" style={linkStyle}>
+            Booking
+          </Link>
 
-            <li className="cursor-pointer transition hover:text-white">
-              Booking
-            </li>
-
-            <li className="cursor-pointer transition hover:text-white">
-              Contact
-            </li>
-          </ul>
+          <Link href="/#contact" style={linkStyle}>
+            Contact
+          </Link>
         </nav>
       </div>
     </header>
   );
 }
+
+const linkStyle = {
+  color: "#ffffff",
+  textDecoration: "none",
+  fontSize: "17px",
+  whiteSpace: "nowrap" as const,
+};

@@ -1,6 +1,5 @@
 import Hero from "./components/Hero";
 import Portfolio from "./components/Portfolio";
-import Booking from "./components/Booking";
 import Contact from "./components/Contact";
 
 export default function Home() {
@@ -8,7 +7,6 @@ export default function Home() {
     <>
       <Hero />
       <Portfolio />
-      <Booking />
       <Contact />
     </>
   );
