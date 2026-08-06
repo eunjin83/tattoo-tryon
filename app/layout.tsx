@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "./components/Header";
 
@@ -14,8 +15,84 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ZK Tattoo",
-  description: "ZK Tattoo portfolio and tattoo try-on",
+  metadataBase: new URL("https://zkinktattoo.com"),
+
+  title: {
+    default: "ZKINK | San Francisco Tattoo Artist",
+    template: "%s | ZKINK",
+  },
+
+  description:
+    "Professional San Francisco tattoo artist specializing in Black & Grey realism, fine line tattoos, custom sleeves, and realistic Tattoo Try-On previews.",
+
+  keywords: [
+    "San Francisco Tattoo Artist",
+    "Black and Grey Tattoo San Francisco",
+    "Tattoo Try On",
+    "Fine Line Tattoo",
+    "Realism Tattoo",
+    "Custom Tattoo",
+    "Tattoo Sleeve",
+    "Bay Area Tattoo",
+    "California Tattoo",
+    "ZKINK",
+    "ZK Tattoo",
+    "Tattoo Artist San Francisco",
+  ],
+
+  authors: [
+    {
+      name: "ZKINK",
+    },
+  ],
+
+  creator: "ZKINK",
+
+  publisher: "ZKINK",
+
+  alternates: {
+    canonical: "https://zkinktattoo.com",
+  },
+
+  openGraph: {
+    title: "ZKINK | San Francisco Tattoo Artist",
+    description:
+      "Black & Grey realism, fine line tattoos, custom tattoo design, and Tattoo Try-On.",
+    url: "https://zkinktattoo.com",
+    siteName: "ZKINK",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ZKINK Tattoo",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "ZKINK | San Francisco Tattoo Artist",
+    description:
+      "Black & Grey realism, custom tattoo design and Tattoo Try-On.",
+    images: ["/og-image.jpg"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  category: "Tattoo",
 };
 
 export default function RootLayout({
@@ -26,6 +103,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-31F2E7VC0G"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+              window.dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'G-31F2E7VC0G');
+          `}
+        </Script>
+
         <Header />
         {children}
       </body>
