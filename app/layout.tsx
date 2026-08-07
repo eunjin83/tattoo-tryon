@@ -95,6 +95,71 @@ export const metadata: Metadata = {
   category: "Tattoo",
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "TattooParlor",
+  "@id": "https://zkinktattoo.com/#tattoo-parlor",
+  name: "ZKINK",
+  url: "https://zkinktattoo.com",
+  image: "https://zkinktattoo.com/og-image.jpg",
+  description:
+    "Professional San Francisco tattoo artist specializing in Black & Grey realism, fine line tattoos, custom tattoo designs, and Tattoo Try-On.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "San Francisco",
+    addressRegion: "CA",
+    addressCountry: "US",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "San Francisco",
+  },
+  sameAs: [
+    "https://www.instagram.com/zk.ink?igsh=NTc4MTIwNjQ2YQ==",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Tattoo Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Black and Grey Tattoo",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Fine Line Tattoo",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Realism Tattoo",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Custom Tattoo Design",
+        },
+      },
+    ],
+  },
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://zkinktattoo.com/booking",
+    },
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -103,6 +168,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Script
+          id="local-business-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-31F2E7VC0G"
           strategy="afterInteractive"
