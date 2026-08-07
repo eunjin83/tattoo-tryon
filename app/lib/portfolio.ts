@@ -50,7 +50,7 @@ export function getPortfolioItems(): PortfolioItem[] {
     .readdirSync(dir)
     .filter((f) => IMAGE_EXTENSIONS.test(f))
     .sort((a, b) =>
-      a.localeCompare(b, undefined, {
+      b.localeCompare(a, undefined, {
         numeric: true,
         sensitivity: "base",
       })
