@@ -142,6 +142,10 @@ export default function Booking() {
       return "Please enter your email address.";
     }
 
+    if (!formData.phone.trim()) {
+      return "Please enter your phone number.";
+    }
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       return "Please enter a valid email address.";
     }
@@ -548,7 +552,7 @@ export default function Booking() {
             </label>
 
             <label style={labelStyle}>
-              Phone
+              Phone <span style={{ color: "#7f7f7f" }}>*</span>
               <input
                 className="booking-field"
                 type="tel"
@@ -557,7 +561,7 @@ export default function Booking() {
                   updateField("phone", event.target.value)
                 }
                 autoComplete="tel"
-                placeholder="Optional"
+                placeholder="Your phone number"
                 style={inputStyle}
               />
             </label>
