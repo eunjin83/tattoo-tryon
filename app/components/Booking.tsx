@@ -271,6 +271,7 @@ export default function Booking() {
   return (
     <section
       id="booking"
+      className="booking-section"
       style={{
         width: "100%",
         maxWidth: "1180px",
@@ -317,15 +318,44 @@ export default function Booking() {
           .booking-layout {
             grid-template-columns: 1fr;
           }
+
+          .booking-aside {
+            position: static !important;
+            top: auto !important;
+          }
         }
 
         @media (max-width: 620px) {
+          .booking-section {
+            padding: 56px 14px 90px !important;
+          }
+
+          .booking-layout {
+            gap: 22px;
+          }
+
+          .booking-aside {
+            position: static !important;
+            top: auto !important;
+            order: 2;
+          }
+
+          .booking-form {
+            order: 1;
+            padding: 18px !important;
+          }
+
           .booking-form-grid {
             grid-template-columns: 1fr;
+            gap: 16px;
           }
 
           .booking-full-width {
             grid-column: auto;
+          }
+
+          .booking-field {
+            font-size: 16px !important;
           }
         }
       `}</style>
@@ -376,6 +406,7 @@ export default function Booking() {
 
       <div className="booking-layout">
         <aside
+          className="booking-aside"
           style={{
             position: "sticky",
             top: "110px",
@@ -461,6 +492,7 @@ export default function Booking() {
         </aside>
 
         <form
+          className="booking-form"
           onSubmit={handleSubmit}
           noValidate
           style={{
