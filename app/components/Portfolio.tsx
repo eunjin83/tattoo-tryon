@@ -14,7 +14,6 @@ export type PortfolioItem = {
 export default function Portfolio({ portfolioItems }: { portfolioItems: PortfolioItem[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [zoomed, setZoomed] = useState(false);
 
   const categories = useMemo(
     () => ["All", ...Array.from(new Set(portfolioItems.map((item) => item.category)))],
@@ -35,7 +34,6 @@ export default function Portfolio({ portfolioItems }: { portfolioItems: Portfoli
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setSelectedIndex(null);
-        setZoomed(false);
       }
 
       if (event.key === "ArrowRight") {
@@ -43,7 +41,6 @@ export default function Portfolio({ portfolioItems }: { portfolioItems: Portfoli
           if (current === null) return null;
           return (current + 1) % filteredItems.length;
         });
-        setZoomed(false);
       }
 
       if (event.key === "ArrowLeft") {
@@ -51,7 +48,6 @@ export default function Portfolio({ portfolioItems }: { portfolioItems: Portfoli
           if (current === null) return null;
           return (current - 1 + filteredItems.length) % filteredItems.length;
         });
-        setZoomed(false);
       }
     };
 
@@ -69,7 +65,6 @@ export default function Portfolio({ portfolioItems }: { portfolioItems: Portfoli
       if (current === null) return null;
       return (current - 1 + filteredItems.length) % filteredItems.length;
     });
-    setZoomed(false);
   };
 
   const showNext = () => {
@@ -77,7 +72,6 @@ export default function Portfolio({ portfolioItems }: { portfolioItems: Portfoli
       if (current === null) return null;
       return (current + 1) % filteredItems.length;
     });
-    setZoomed(false);
   };
 
   return (
@@ -278,18 +272,6 @@ export default function Portfolio({ portfolioItems }: { portfolioItems: Portfoli
           max-width: 100%;
           max-height: 76vh;
           object-fit: contain;
-          cursor: zoom-in;
-          transition: transform 180ms ease;
-          transform-origin: center;
-        }
-
-        .portfolio-modal-image[data-zoomed="true"] {
-          max-width: none;
-          max-height: none;
-          width: auto;
-          height: auto;
-          transform: scale(1.8);
-          cursor: zoom-out;
         }
 
         .portfolio-modal-copy {
@@ -474,7 +456,6 @@ export default function Portfolio({ portfolioItems }: { portfolioItems: Portfoli
           aria-label={selectedItem.title}
           onClick={() => {
             setSelectedIndex(null);
-            setZoomed(false);
           }}
         >
           <div
@@ -487,7 +468,6 @@ export default function Portfolio({ portfolioItems }: { portfolioItems: Portfoli
                 className="portfolio-close"
                 onClick={() => {
                   setSelectedIndex(null);
-                  setZoomed(false);
                 }}
                 aria-label="Close image"
               >
@@ -518,10 +498,8 @@ export default function Portfolio({ portfolioItems }: { portfolioItems: Portfoli
 
               <img
                 className="portfolio-modal-image"
-                data-zoomed={zoomed}
                 src={selectedItem.image}
                 alt={`${selectedItem.title} - Black and Grey Tattoo by San Francisco Tattoo Artist ZKINK`}
-                onClick={() => setZoomed((current) => !current)}
               />
             </div>
 
