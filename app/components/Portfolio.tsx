@@ -473,11 +473,11 @@ export default function Portfolio() {
               >
                 <div className="portfolio-image-wrap">
                   <img
-                    className="portfolio-image"
-                    src={item.image}
-                    alt={item.title}
-                    loading="lazy"
-                  />
+                  className="portfolio-image"
+                  src={item.image}
+                  alt={`${item.title} - Black and Grey Tattoo by San Francisco Tattoo Artist ZKINK`}
+                  loading="lazy"
+                 />
                 </div>
 
                 <div className="portfolio-copy">
@@ -552,7 +552,7 @@ export default function Portfolio() {
                 className="portfolio-modal-image"
                 data-zoomed={zoomed}
                 src={selectedItem.image}
-                alt={selectedItem.title}
+                alt={`${selectedItem.title} - Black and Grey Tattoo by San Francisco Tattoo Artist ZKINK`}
                 onClick={() => setZoomed((current) => !current)}
               />
             </div>
