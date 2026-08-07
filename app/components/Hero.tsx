@@ -5,17 +5,17 @@ import { useEffect, useState } from "react";
 
 const heroImages = [
   {
-    src: "/hero/1.jpeg",
+    src: "/hero/1.JPG",
     alt: "Featured black and grey tattoo artwork",
     position: "center",
   },
   {
-    src: "/hero/2.jpeg",
+    src: "/hero/2.JPG",
     alt: "Featured realistic skull tattoo",
     position: "center",
   },
   {
-    src: "/hero/3.jpeg",
+    src: "/hero/3.JPG",
     alt: "Featured animal realism tattoo",
     position: "center",
   },
