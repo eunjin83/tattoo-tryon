@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://zkinktattoo.com"),
+  metadataBase: new URL("https://www.zkinktattoo.com"),
 
   title: {
     default: "ZKINK | San Francisco Tattoo Artist",
@@ -27,17 +27,25 @@ export const metadata: Metadata = {
 
   keywords: [
     "San Francisco Tattoo Artist",
-    "Black and Grey Tattoo San Francisco",
-    "Tattoo Try On",
-    "Fine Line Tattoo",
-    "Realism Tattoo",
-    "Custom Tattoo",
-    "Tattoo Sleeve",
-    "Bay Area Tattoo",
-    "California Tattoo",
-    "ZKINK",
-    "ZK Tattoo",
-    "Tattoo Artist San Francisco",
+  "Black and Grey Tattoo San Francisco",
+  "Tattoo Try On",
+  "Fine Line Tattoo",
+  "Realism Tattoo",
+  "Custom Tattoo",
+  "Tattoo Sleeve",
+  "Bay Area Tattoo",
+  "California Tattoo",
+  "ZKINK",
+  "ZKINK Tattoo",
+  "ZK Tattoo",
+  "Tattoo Artist ZK",
+  "Tattoo Artist San Francisco",
+  "SF Tattoo Artist",
+  "Black and Grey Tattoo Artist",
+  "Realism Tattoo San Francisco",
+  "Fine Line Tattoo San Francisco",
+  "Custom Tattoo San Francisco",
+  "San Francisco Tattoo",
   ],
 
   authors: [
@@ -51,14 +59,14 @@ export const metadata: Metadata = {
   publisher: "ZKINK",
 
   alternates: {
-    canonical: "https://zkinktattoo.com",
+    canonical: "https://www.zkinktattoo.com",
   },
 
   openGraph: {
     title: "ZKINK | San Francisco Tattoo Artist",
     description:
       "Black & Grey realism, fine line tattoos, custom tattoo design, and Tattoo Try-On.",
-    url: "https://zkinktattoo.com",
+    url: "https://www.zkinktattoo.com",
     siteName: "ZKINK",
     locale: "en_US",
     type: "website",
@@ -98,10 +106,10 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "TattooParlor",
-  "@id": "https://zkinktattoo.com/#tattoo-parlor",
+  "@id": "https://www.zkinktattoo.com/#tattoo-parlor",
   name: "ZKINK",
-  url: "https://zkinktattoo.com",
-  image: "https://zkinktattoo.com/og-image.jpg",
+  url: "https://www.zkinktattoo.com",
+  image: "https://www.zkinktattoo.com/og-image.jpg",
   description:
     "Professional San Francisco tattoo artist specializing in Black & Grey realism, fine line tattoos, custom tattoo designs, and Tattoo Try-On.",
   address: {
@@ -155,7 +163,7 @@ const localBusinessSchema = {
     "@type": "ReserveAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://zkinktattoo.com/booking",
+      urlTemplate: "https://www.zkinktattoo.com/booking",
     },
   },
 };
