@@ -108,6 +108,7 @@ const localBusinessSchema = {
   "@type": "TattooParlor",
   "@id": "https://www.zkinktattoo.com/#tattoo-parlor",
   name: "ZKINK",
+  alternateName: ["ZKINK TATTOO", "ZK"],
   url: "https://www.zkinktattoo.com",
   image: "https://www.zkinktattoo.com/og-image.jpg",
   description:
@@ -123,7 +124,7 @@ const localBusinessSchema = {
     name: "San Francisco",
   },
   sameAs: [
-    "https://www.instagram.com/zk.ink?igsh=NTc4MTIwNjQ2YQ==",
+    "https://www.instagram.com/zk.ink/",
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
